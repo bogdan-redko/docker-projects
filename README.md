@@ -20,7 +20,7 @@ docker push docker:5000/coookit-host
 docker tag 75036780a041 docker:5000/postgres95  
 docker push docker:5000/postgres95  
 
-docker images
+docker images  
 docker:5000/coookit-host   latest              f9a6e7259fed        2 hours ago         864.9 MB  
 docker:5000/postgres95     latest              75036780a041        2 hours ago         265.9 MB  
 
