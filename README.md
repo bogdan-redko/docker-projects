@@ -33,4 +33,4 @@ docker network create --subnet=172.18.0.0/16 coookit-service
 add file /etc/systemd/system/coookit-host.service
 add file /etc/systemd/system/postgres95.service
 
-
+ systemctl start coookit-host
