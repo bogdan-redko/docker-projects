@@ -10,15 +10,15 @@ service docker-registry start
 faund and change in file "/usr/lib/systemd/system/docker.service"  
 string: ExecStart=/usr/bin/dockerd --insecure-registry docker:5000 to allow use local insecure-registry.  
 
-#Create docker images and push it in docker registry.
-docker build -t postgres95 local/postgres95
-docker build -t coookit-host local/centos7-base
+#Create docker images and push it in docker registry.  
+docker build -t postgres95 local/postgres95  
+docker build -t coookit-host local/centos7-base  
 
-docker tag f9a6e7259fed docker:5000/coookit-host
-docker push docker:5000/coookit-host
+docker tag f9a6e7259fed docker:5000/coookit-host  
+docker push docker:5000/coookit-host  
 
-docker tag 75036780a041 docker:5000/postgres95
-docker push docker:5000/postgres95
+docker tag 75036780a041 docker:5000/postgres95  
+docker push docker:5000/postgres95  
 
 docker images
 docker:5000/coookit-host   latest              f9a6e7259fed        2 hours ago         864.9 MB  
