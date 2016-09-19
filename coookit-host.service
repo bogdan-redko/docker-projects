@@ -1,0 +1,16 @@
+[Unit]
+Description=coookit-host Container
+After=docker.service
+Requires=docker.service
+After=postgres95.service
+Requires=postgres95.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=-/usr/bin/docker stop coookit-host
+ExecStartPre=-/usr/bin/docker rm coookit-host
+ExecStart=/opt/systemd-docker run --rm --name coookit-host --net coookit-service --ip 172.18.0.22  -p 8001:8000 docker:5000/coookit-host
+
+[Install]
+WantedBy=multi-user.target
