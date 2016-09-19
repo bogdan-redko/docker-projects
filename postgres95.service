@@ -1,1 +1,13 @@
+[Unit]
+Description=Postgres95 Container
+After=docker.service
+Requires=docker.service
 
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/usr/bin/docker run --rm --name postgres95 --net coookit-service --ip 172.18.0.23 -p 5432:5432 docker:5000/postgres95
+
+
+[Install]
+WantedBy=multi-user.target
